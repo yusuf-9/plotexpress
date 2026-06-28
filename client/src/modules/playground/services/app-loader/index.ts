@@ -97,12 +97,9 @@ export default class AppLoader {
       const setWorkspace = this.storeRef.getState().setWorkspace;
       const setIsSharedWorkspace = this.storeRef.getState().setIsSharedWorkspace;
 
-      console.log({
-        name: JSON.parse(configFileResponse.data[SHARED_WORKSPACE_FILE_DATA_KEY].workspaceName)
-      })
       setFiles(dataFileResponse.data[SHARED_WORKSPACE_FILE_DATA_KEY]);
       setWorkspace({
-        name: JSON.parse(configFileResponse.data[SHARED_WORKSPACE_FILE_DATA_KEY].workspaceName)
+        name: configFileResponse.data[SHARED_WORKSPACE_FILE_DATA_KEY].workspaceName
       });
       setCharts(configFileResponse.data[SHARED_WORKSPACE_FILE_DATA_KEY].charts);
 
